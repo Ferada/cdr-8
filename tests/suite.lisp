@@ -5,3 +5,5 @@
 (def-suite cdr-8)
 
 (def-suite equals :in cdr-8)
+
+(def-suite compare :in cdr-8)

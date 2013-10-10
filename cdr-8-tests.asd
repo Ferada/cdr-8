@@ -9,4 +9,5 @@
                 :components
                 ((:file "package")
                  (:file "suite")
-                 (:file "equals")))))
+                 (:file "equals")
+                 (:file "compare")))))
