@@ -11,3 +11,9 @@
 
 (def-test numbers.2 ()
   (is (eq '/= (compare #C(1 2) #C(2 1)))))
+
+(def-test numbers.3 ()
+  (mapcar (lambda (function)
+            (signals uncomparable-objects-error
+              (funcall function #C(1 2) #C(2 1))))
+          '(lt lte gt gte)))

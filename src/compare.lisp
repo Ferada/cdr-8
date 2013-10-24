@@ -39,8 +39,14 @@
 (defmethod compare ((a symbol) (b symbol) &key &allow-other-keys)
   (if (eq a b) '= '/=))
 
+(define-condition uncomparable-objects-error ()
+  ((objects :initarg :objects :reader uncomparable-objects-error-objects))
+  (:report (lambda (condition stream)
+             (format stream "Uncomparable objects~{~#[~; ~S~; ~S and ~S~:;~@{ ~S~#[~; and~:;,~]~}~]~}."
+                            (uncomparable-objects-error-objects condition)))))
+
 (defun uncomparable (a b)
-  (error "Uncomparable objects ~S and ~S." a b))
+  (error 'uncomparable-objects-error :objects (list a b)))
 
 (defun lt (a b &rest keys &key &allow-other-keys)
   (case (apply #'compare a b keys)

@@ -8,4 +8,5 @@
            #:compare
            #:lt #:lte #:gt #:gte
            #:lessp #:not-greaterp #:greaterp #:not-lessp
-           #:hash-code))
+           #:hash-code
+           #:uncomparable-objects-error #:uncomparable-objects-error-objects))
