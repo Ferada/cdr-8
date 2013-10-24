@@ -72,7 +72,7 @@
    (< NIL)
    (T (uncomparable a b))))
 
-(eval-when (:compile-toplevel :load-toplevel :execute)
+(eval-when (:load-toplevel :execute)
   (setf (fdefinition 'lessp) #'lt
         (fdefinition 'not-greaterp) #'lte
         (fdefinition 'greaterp) #'gt

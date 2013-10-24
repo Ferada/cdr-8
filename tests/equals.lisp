@@ -44,3 +44,9 @@
         (b (make-instance 'bar)))
     (is-true (equals a a))
     (is-false (equals a b))))
+
+(def-test aliases ()
+  (is-true (eq #'lessp #'lt))
+  (is-true (eq #'not-greaterp #'lte))
+  (is-true (eq #'greaterp #'gt))
+  (is-true (eq #'not-lessp #'gte)))
