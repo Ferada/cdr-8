@@ -11,6 +11,6 @@
   :components ((:module "src"
                 :components
                 ((:file "package")
-                 (:file "equals")
                  (:file "compare")
+                 (:file "equals")
                  (:file "hash-code")))))
